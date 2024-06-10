@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload Document</title>
+</head>
+<body>
+    <h1>Upload Document</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <label for="format">Convert to:</label>
+        <select name="format" id="format">
+            <option value="docx">DOCX</option>
+            <option value="pdf">PDF</option>
+            <option value="md">Markdown</option>
+        </select>
+        <button type="submit">Upload</button>
+    </form>
+</body>
+</html>
